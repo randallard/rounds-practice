@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Dancing Refresher Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .playlist-section {
+            margin-bottom: 30px;
+        }
+
+        .playlist-section h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        .playlist-link {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .playlist-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-left-color: #fff;
+            transform: translateX(5px);
+        }
+
+        .playlist-link .tempo {
+            display: block;
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 3px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            font-size: 22px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section h4 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .resource-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .resource-list li:last-child {
+            border-bottom: none;
+        }
+
+        .resource-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+
+        .week-plan {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .tips-box {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffa500;
+        }
+
+        .tips-box h4 {
+            color: #ff8c00;
+            margin-top: 0;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #764ba2;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>🎵 Practice Playlists</h2>
+
+            <div class="playlist-section">
+                <h3>Waltz</h3>
+                <a href="https://music.youtube.com/playlist?list=PLpr8Jxv9iKMTBj1DhjYWiE72AieQ_hgIW" target="_blank" class="playlist-link">
+                    Slower Waltz
+                    <span class="tempo">84-90 BPM • Perfect for learning</span>
+                </a>
+                <a href="https://music.youtube.com/playlist?list=PLpr8Jxv9iKMShS6Hgs1AzsJth2S_yZsGp" target="_blank" class="playlist-link">
+                    Moderate Waltz
+                    <span class="tempo">95-110 BPM • Building confidence</span>
+                </a>
+            </div>
+
+            <div class="playlist-section">
+                <h3>Two-Step</h3>
+                <a href="https://music.youtube.com/playlist?list=PLpr8Jxv9iKMR6Nhwk5I3WOL1RXtER4qSq" target="_blank" class="playlist-link">
+                    Slower Two-Step
+                    <span class="tempo">150-165 BPM • Learning tempo</span>
+                </a>
+                <a href="https://music.youtube.com/playlist?list=PLpr8Jxv9iKMSzNXf3DCEPIT19mDN7FLzT" target="_blank" class="playlist-link">
+                    Moderate Two-Step
+                    <span class="tempo">170-185 BPM • Building speed</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>Round Dancing Refresher Guide</h1>
+                <p>Getting back into lessons with Brianna • Two-Step & Waltz</p>
+            </div>
+
+            <div class="section">
+                <h2>Understanding Where You Are</h2>
+                <p>Since your lessons have been running 6-7 weeks already, they're likely working on <strong>Phase II</strong> material in both two-step and waltz. Round dancing is organized into phases (I-VI), with Phase I being basics and Phase II adding more variety and turns.</p>
+            </div>
+
+            <div class="section">
+                <h2>Best Free Resources</h2>
+
+                <h3>1. Round Dance Instruction (RDInstruction.co.uk) - PRIMARY RESOURCE</h3>
+                <p>This is an excellent FREE site created by UK instructor Judi Read, specifically designed for refreshing skills:</p>
+                <ul class="resource-list">
+                    <li><a href="https://www.rdinstruction.co.uk/two-step-online-course" target="_blank"><strong>Two-Step Online Course</strong></a></li>
+                    <li><a href="https://www.rdinstruction.co.uk/waltz-online-course" target="_blank"><strong>Waltz Online Course</strong></a></li>
+                </ul>
+                <p>Each course includes:</p>
+                <ul>
+                    <li>Written "talk & walk through" definitions</li>
+                    <li>Pictures showing foot positions</li>
+                    <li>Video clips demonstrating figures</li>
+                    <li>Practice modules with music</li>
+                    <li>Organized by progression (Part 1, Part 2, etc.)</li>
+                </ul>
+
+                <h3>2. RoundDancing.net</h3>
+                <p>Harold & Meredith Sears' comprehensive reference:</p>
+                <ul class="resource-list">
+                    <li><a href="https://www.rounddancing.net/dance/figures/two.html" target="_blank"><strong>Two-Step Figures</strong></a></li>
+                    <li><a href="https://www.rounddancing.net/dance/figures/waltz.html" target="_blank"><strong>Waltz Figures</strong></a></li>
+                </ul>
+                <p>Great for looking up specific figures and understanding their descriptions.</p>
+
+                <h3>3. YouTube Channels</h3>
+                <ul>
+                    <li>Search for "round dance two-step tutorial" or "round dance waltz tutorial"</li>
+                    <li>Look for channels that post Roundalab-standard instruction</li>
+                    <li>The Shoeleather Express has organized playlists by rhythm</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Your 2-3 Week Practice Plan</h2>
+
+                <div class="week-plan">
+                    <h3>Week 1: Fundamentals Review</h3>
+                    <h4>Two-Step Focus:</h4>
+                    <ul>
+                        <li>Basic rhythm (quick-quick-slow)</li>
+                        <li>Forward two-step</li>
+                        <li>Box and reverse box</li>
+                        <li>Two turning two-steps</li>
+                    </ul>
+
+                    <h4>Waltz Focus:</h4>
+                    <ul>
+                        <li>3/4 timing (1-2-3, 1-2-3)</li>
+                        <li>Box step</li>
+                        <li>Balance steps</li>
+                        <li>Progressive basics</li>
+                    </ul>
+
+                    <p><strong>Practice:</strong> 20-30 minutes, 3-4 times this week. Use RDInstruction.co.uk courses, work through Part 1 of each rhythm.</p>
+                </div>
+
+                <div class="week-plan">
+                    <h3>Week 2: Building Complexity</h3>
+                    <h4>Two-Step:</h4>
+                    <p>Add scissors, progressive scissors, hitches, forward locks, fishtail</p>
+
+                    <h4>Waltz:</h4>
+                    <p>Add turning box, progressive waltz, underarm turns, hesitations</p>
+
+                    <p><strong>Practice:</strong> 30-40 minutes, 4-5 times. Move to Part 2 on RDInstruction.co.uk. Start practicing to music using your playlists.</p>
+                </div>
+
+                <div class="week-plan">
+                    <h3>Week 3: Integration & Polish</h3>
+                    <ul>
+                        <li>Practice complete sequences</li>
+                        <li>Focus on smooth transitions</li>
+                        <li>Work on timing with music</li>
+                        <li>Review any figures that feel rusty</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Key Things to Remember</h2>
+
+                <h3>Round Dance Specifics:</h3>
+                <ul>
+                    <li><strong>Cuer calls ahead:</strong> The cuer announces figures just before you do them</li>
+                    <li><strong>Line of Dance (LOD):</strong> Move counter-clockwise around the floor</li>
+                    <li><strong>Phase system:</strong> Don't worry about memorizing entire dances - that's the cuer's job!</li>
+                    <li><strong>Positions matter:</strong> Closed, semi-closed, open, butterfly, banjo, sidecar</li>
+                </ul>
+
+                <h3>Two-Step Essentials:</h3>
+                <ul>
+                    <li><strong>Rhythm:</strong> Quick-Quick-Slow (QQS)</li>
+                    <li>No rise and fall (unlike waltz)</li>
+                    <li>Small steps, feet under body</li>
+                    <li>Common beginner figures: forward two-step, box, two turning two-steps</li>
+                </ul>
+
+                <h3>Waltz Essentials:</h3>
+                <ul>
+                    <li><strong>Rhythm:</strong> 1-2-3, 1-2-3 (3/4 time)</li>
+                    <li>Rise and fall technique (rise on steps 2-3, fall on 1)</li>
+                    <li>Box step is foundation</li>
+                    <li>Flows and progresses around the floor</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Optional Paid Resources (Roundalab)</h2>
+                <p>If you want even more comprehensive materials:</p>
+                <ul>
+                    <li><strong>Roundalab.org</strong> has subscription-based video figure libraries</li>
+                    <li>Teaching DVDs for each phase</li>
+                    <li>These are comprehensive but not necessary if you're using the free resources</li>
+                </ul>
+            </div>
+
+            <div class="tips-box">
+                <h4>Tips for Success</h4>
+                <ol>
+                    <li><strong>Start with RDInstruction.co.uk</strong> - Work through both courses systematically</li>
+                    <li><strong>Practice together regularly</strong> - Even 20 minutes helps</li>
+                    <li><strong>Focus on basics first</strong> - Solid fundamentals matter more than fancy figures</li>
+                    <li><strong>Use a speaker</strong> - Practice with waltz and two-step music playing from your playlists</li>
+                    <li><strong>Don't stress about perfection</strong> - The cuer will guide you during class</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>How to Use Your Playlists</h2>
+
+                <h3>Week 1-2:</h3>
+                <ul>
+                    <li>Start with the <strong>slower playlists</strong> exclusively</li>
+                    <li>Practice 20-30 minutes, 3-4 times per week</li>
+                    <li>Focus on one rhythm per practice session</li>
+                </ul>
+
+                <h3>Week 2-3:</h3>
+                <ul>
+                    <li>Mix in songs from the <strong>moderate playlists</strong></li>
+                    <li>Alternate: 2 slow songs, then 1 moderate song</li>
+                    <li>Increase practice to 30-40 minutes as you build stamina</li>
+                </ul>
+
+                <h3>Pro Tips:</h3>
+                <ul>
+                    <li><strong>Start each practice</strong> with your slowest songs to warm up</li>
+                    <li>The key is consistent practice at the right tempo</li>
+                    <li>These songs will help you rebuild muscle memory without overwhelming you</li>
+                    <li>By week 3, you'll be ready to jump back into those lessons!</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>When You're Ready to Jump Back In</h2>
+                <p>After 2-3 weeks of focused practice, you should be comfortable with Phase I and early Phase II figures in both rhythms. This will let you jump back into classes without feeling lost. The cuer will introduce new figures gradually, and you'll remember more than you think once you're back in the flow!</p>
+                <p style="margin-top: 20px; padding: 20px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
+                    <strong>Remember:</strong> The most important thing is to have fun! Round dancing is about enjoying the music, the movement, and the time with Brianna. Don't worry about being perfect - just get out there and dance!
+                </p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
